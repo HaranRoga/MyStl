@@ -10,3 +10,5 @@ folder algorithm:
     - *max_element
     - *min_element
     - accumulate
+
+git checkout main
