@@ -11,4 +11,8 @@ folder algorithm:
     - *min_element
     - accumulate
 
+<<<<<<< HEAD
 adding a new line [remote]
+=======
+git checkout main
+>>>>>>> john/test
