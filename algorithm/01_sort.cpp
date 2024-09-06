@@ -2,6 +2,7 @@
 // sort vector dirct (from minimum to maximum)
 // sort vector reverse (from maximum to minimum)
 // special sort (using dedicated function)
+// custom sort by using merge-sort algorithm
 
 #include <iostream>
 #include <vector>
@@ -45,10 +46,79 @@ bool mySort(pair<int, int> p1, pair<int, int> p2) {
     }
 }
 
+// self implementation of merge-sort algorithm
+// merge used for merging two sorted array
+void merge(vector<int>& arr, int l, int m, int r)
+{
+    // prepare left side temporary array
+    int lSize = m - l + 1;
+    int arrL[lSize];
+    for(int i=0; i<lSize; i++)
+    {
+        arrL[i] = arr[l+i];
+    }
+    
+    // prepare right side temporary array
+    int rSize = r - m;
+    int arrR[rSize];
+    for(int j=0; j<rSize; j++)
+    {
+        arrR[j] = arr[m+1+j];
+    }
+         
+    // start merge
+    int i = 0;
+    int j = 0;
+    int k = l;
+    while(i<lSize && j<rSize)
+    {
+        if(arrL[i] <= arrR[j])
+        {
+            arr[k] = arrL[i];
+            i++;    
+        }
+        else
+        {
+            arr[k] = arrR[j];
+            j++;
+        }
+        k++;
+    }
+        
+    // complete elements from left side
+    while(i<lSize)
+    {
+        arr[k] = arrL[i];
+        i++;
+        k++;
+    }
+        
+    // complete elements from right side
+    while(j<rSize)
+    {
+        arr[k] = arrR[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(vector<int>& arr, int l, int r)
+{
+    //code here
+    if(l<r)
+    {
+        int m = (r+l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m+1, r);
+        merge(arr, l, m, r);
+    }
+}
+
 // main function demonstrating sort opetions
 int main() {
     vector<pair<int, int>> v = {{5,3}, {3,8}, {9,11}, {98, -4}, {5,2}, {5,4}};
     vector<int> v1 = {9, 2, 4, 6, 8, 9, 5, 98, 55, 43, 56};
+    vector<int> v2 = {9, 2, 4, 6, 8, 9, 5, 98, 55, 43, 56};
 
     // print source array
     print(v1, "source of int array");
@@ -56,6 +126,10 @@ int main() {
     // sort accending
     sort(v1.begin(), v1.end());
     print(v1, "accending sort of the array");
+
+    // sort accending using custom mergesort fuction
+    mergeSort(v2, 0, v2.size()-1);
+    print(v2, "Custom sort function");
 
     // sort decending (used for integers only)
     sort(v1.begin(), v1.end(), greater<int>());
