@@ -1,4 +1,3 @@
-# MyStl
 C++ Standard template library examples of usage
 
 This folder contains practice of STL functionnality
@@ -11,5 +10,3 @@ folder algorithm:
     - *max_element
     - *min_element
     - accumulate
-
-
