@@ -1,0 +1,68 @@
+--------------------------------
+Chapter 1: element find functions
+find:
+- find(b, e, val)
+- find_if(b, e, func1)
+- find_if_not(b, e, func1)
+(file 01_find1)
+
+adjactent:
+- adjactent_find(b, e)
+- search_n(b, e, rep, val)
+- search_n(b, e, rep, val, func2)
+(file 01_find2)
+
+subsequence:
+- search(b, e, b2, e2)
+- search(b, e, b2, e2, func2)
+- find_end(b, e, b2, e2)
+- find_end(b, e, b2, e2, func2)
+(file 01_find3)
+
+--------------------------------
+Chapter 2: sequence searching functions
+compare using functions
+- all_of(b, e, func1)
+- any_of(b, e, func1)
+- none_of(b, e, func1)
+(file 02_compare1)
+
+compare two vectors:
+- equal(b, e, b2)
+- equal(b, e, b2, func2)
+(file 02_compare2)
+
+compare permutation (in any order) and lexicographical (a<b)
+- is_permutation(b, e, b2)
+- is_permutation(b, e, b2, func2)
+- lexicographical_compare(b, e, b2, e2)
+- lexicographical_compare(b, e, b2, e2, finc2)
+(file 02_comare3)
+
+--------------------------------
+Chapter 3: copying functions
+copy vector elements
+- copy(b, e, b2)
+- copy_n(b, n, b2)
+- copy_if(b, e, b2, func1)
+- copy_backwards(b, e, e2-1)
+(file 03_copy1)
+
+swap functions
+- swap(a,b)
+- swap_range(b, e, b2)
+- iter_swap(*a, *b)
+(file 03_copy2)
+
+inserter functions
+- itr = inserter(arr&, b)
+- transform(b, e, func)
+
+
+********************
+- find_first_of()
+- mismatch()
+********************
+- count()
+- count_if()
+********************
